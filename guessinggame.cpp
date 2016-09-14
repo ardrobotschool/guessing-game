@@ -25,6 +25,7 @@ void game(int randomInt, int guesses){
     cin >> ans;
     cout << endl;
     if(ans == 'y'){
+      //Restart the game. Pick new randomInt and reset guesses.
       srand(time(NULL));
       game(rand()%101, 0);
     }
@@ -32,6 +33,7 @@ void game(int randomInt, int guesses){
       return;
     }
   }
+  //Handle wrong guesses.
   else if(guess < randomInt){
     cout << "Too low." << endl;
     game(randomInt, guesses);
